@@ -70,7 +70,7 @@
 			c3p0-config 格式
 			<c3p0-config>
 			  <default-config>
-			    <property name="DriverClass">com.mysql.jdbc.Driver</property>
+			    <property name="driverClass">com.mysql.jdbc.Driver</property>
 			    <property name="jdbcUrl">jdbc:mysql:///summer</property>
 				<property name="user">root</property>
 				<property name="password">root</property>

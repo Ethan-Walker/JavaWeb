@@ -43,7 +43,7 @@ dbutils工具
 				怎样配套使用:
 				1. 无参 QueryRunner()
 					QueryRunner runner=new QueryRunner();
-					Connection con = C3P0Utils.getConnection();
+					Connection con = JDBCUtils.getConnection();
 					// 由于需要传入connection对象，这里可以进行事务控制
 					con.setAutoCommit(false);
 					runner.query(Connection,sql,ResultSetHandler,Object... param);
