@@ -1,5 +1,6 @@
 BeanUtils工具包。
-　　BeanUtils工具包：下载：http://commons.apache.org/beanutils/　注意：应用的时候还需要一个logging包 http://commons.apache.org/logging/
+　　BeanUtils工具包：下载：http://commons.apache.org/beanutils/　
+    注意：应用的时候还需要一个logging包 http://commons.apache.org/logging/
 
     BeanUtils.populate(bean, properties);  properties 为 Map<String,Object[]>  类型
     BeanUtils.getProperty(user,"userName")
@@ -16,11 +17,10 @@ BeanUtils工具包。
 　　　　2）. 对引用数据类型的属性的操作：首先在类中必须有对象，不能是null
 
             例如，private Date birthday=new Date();。操作的是对象的属性而不是整个对象
-            例如，  BeanUtils.setProperty(user,"birthday.time",111111);　　　
+                    BeanUtils.setProperty(user,"birthday.time",111111);　　　
                     BeanUtils.setProperty(user, "birthday.time","111111");
                     Object obj = BeanUtils.getProperty(user, "birthday.time");
                     System.out.println(obj);
-
 PropertyUtils类和BeanUtils不同在于，运行getProperty、setProperty操作时，没有类型转换，使用属性的原有类型或者包装类。由于age属性的数据类型是int，所以方法PropertyUtils.setProperty(userInfo, "age", "8")会爆出数据类型不匹配，无法将值赋给属性。
 
         把字符串转换成日期类型

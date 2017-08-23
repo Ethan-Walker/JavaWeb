@@ -52,7 +52,7 @@ public class User {
 
 　　将JavaBean中的属性封装起来进行操作。在程序把一个类当做 JavaBean 来看，就是调用Introspector.getBeanInfo()方法，得到的BeanInfo对象封装了把这个类当做JavaBean看的结果信息，即属性的信息。
 
-　　主要方法:   BeanInfo beanInfo=Introspector.getBeanInfo(UserInfo.class);
+　　主要方法:   BeanInfo beanInfo=Introspector.getBeanInfo(User.class);
 			    PropertyDescriptor[] proDescrtptors=beanInfo.getPropertyDescriptors();
 
 	获得属性的描述，可以采用遍历BeanInfo的方法，来查找、设置类的属性。具体代码如下：
@@ -96,7 +96,4 @@ public class User {
 　　说明：BeanInfoUtil.setProperty(userInfo, "age");报错是应为age属性是int数据类型，而setProperty方法里面默认给age属性赋的值是String类型。所以会爆出argument type mismatch参数类型不匹配的错误信息。
 
 　　BeanUtils工具包：
-
-
-
 　　由上述可看出，内省操作非常的繁琐，所以所以Apache开发了一套简单、易用的API来操作Bean的属性——BeanUtils

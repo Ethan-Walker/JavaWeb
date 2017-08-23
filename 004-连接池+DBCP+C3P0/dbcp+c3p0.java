@@ -45,6 +45,7 @@
 		c3p0连接池使用
 			1.导包
 				c3p0-0.9.1.2.jar
+				commons-pool-1.jar
 
 			使用
 				1.手动
@@ -68,11 +69,18 @@
 						它会在指定的目录下查找指定名称的配置文件，并将其中内容加载。
 
 			c3p0-config 格式
-			<c3p0-config>
-			  <default-config>
-			    <property name="driverClass">com.mysql.jdbc.Driver</property>
-			    <property name="jdbcUrl">jdbc:mysql:///summer</property>
-				<property name="user">root</property>
-				<property name="password">root</property>
-			  </default-config>
-			</c3p0-config>
+				<c3p0-config>
+				  <default-config>
+				    <property name="driverClass">com.mysql.jdbc.Driver</property>
+				    <property name="jdbcUrl">jdbc:mysql:///summer?characterEncoding=utf-8</property>
+					<property name="user">root</property>
+					<property name="password">root</property>
+				  </default-config>
+				</c3p0-config>
+
+			c3p0.properties 配置格式
+				c3p0.driverClass=com.mysql.jdbc.Driver
+				c3p0.jdbcUrl=jdbc:mysql:///summer?useUnicode=true&characterEncoding=utf-8
+				c3p0.user=root
+				c3p0.password=root
+			其中?useUnicode=true&characterEncoding=utf-8 保证更改数据库数据为中文时，不会乱码

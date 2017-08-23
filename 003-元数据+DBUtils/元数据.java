@@ -28,7 +28,6 @@
 				KEY_SEQ short => 主键中的序列号（值 1 表示主键中的第一列，值 2 表示主键中的第二列）。
 				PK_NAME String => 主键的名称（可为 null）
 
-
 	2.ParameterMetaData 参数元数据
 		参数元数据主要用于获取:sql语句中占位符的相关信息.
 

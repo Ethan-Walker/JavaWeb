@@ -13,7 +13,7 @@
 		1.创建一个MyDataSource类，在这个类中创建一个LinkedList<Connection>
 		2.在其构造方法中初始化List集合，并向其中装入5个Connection对象。
 		3.创建一个public Connection getConnection();从List集合中获取一个连接对象返回.
-		4.创建一个  public void readd(Connection) 这个方法是将使用完成后的Connection对象重新装入到List集合中.
+		4.创建一个  public void reAdd(Connection) 这个方法是将使用完成后的Connection对象重新装入到List集合中.
 
 	代码问题:
 		1.连接池的创建是有标准的.
@@ -163,12 +163,3 @@
 						ComboPooledDataSource cpds = new ComboPooledDataSource();
 						它会在指定的目录下查找指定名称的配置文件，并将其中内容加载。
 
-c3p0-config 格式
-<c3p0-config>
-  <default-config>
-    <property name="DriverClass">com.mysql.jdbc.Driver</property>
-    <property name="jdbcUrl">jdbc:mysql:///summer</property>
-	<property name="user">root</property>
-	<property name="password">root</property>
-  </default-config>
-</c3p0-config>

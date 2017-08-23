@@ -7,6 +7,11 @@ JavaBean是使用Java语言开发的一个可重用的组件，在JSP的开发�
 2.可利用JavaBean的优点。将日常用到的程序写成JavaBean组件，当在JSP要使用时，只要调用JavaBean组件来执行用户所要的功能，不用再重复写相同的程序，这样以来也可以节省开发所需的时间。
 
 二、JavaBean开发要求
+标准JavaBean 四个要求:
+(1) 属性私有
+(2) getter/setter 方法
+(3) 无参构造
+(4) 实现 Serializable 接口(序列化)    (在 session 中添加JavaBean， session 活化时，要求JavaBean序列化)
 
 1.JavaBean本身就是一个类，属于Java的面向对象编程。
 
