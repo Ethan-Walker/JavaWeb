@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.CustomerMapper">
+
+    <select id="queryAllCustomer" resultType="customer">
+        select * from customer
+    </select>
+    <select id="queryCustomerById" parameterType="Integer" resultType="Customer">
+        select * from customer where cust_id = #{v}
+    </select>
+    <select id="queryByQueryVo" resultType="customer" parameterType="QueryVo">
+        select * from customer
+        <include refid="whereQV"/>
+        limit #{startRow} , #{rows}
+    </select>
+    <select id="countByQueryVo" parameterType="QueryVo" resultType="Integer">
+        select count(1) from customer
+        <include refid="whereQV"/>
+    </select>
+    <delete id="deleteCustomerById" parameterType="Integer">
+        delete from customer where cust_id=#{n}
+    </delete>
+    <update id="updateCustomer" parameterType="customer">
+        update customer
+        <set>
+            <if test="cust_name!=null and !''.equals(cust_name.trim())">
+                cust_name=#{cust_name},
+            </if>
+            <if test="cust_user_id!=null and !''.equals(cust_user_id.trim())">
+                cust_user_id=#{cust_user_id},
+            </if>
+            <if test="cust_create_id!=null and !''.equals(cust_create_id.trim())">
+                cust_create_id=#{cust_create_id},
+            </if>
+            <if test="cust_source!=null and !''.equals(cust_source.trim())">
+                cust_source=#{cust_source},
+            </if>
+            <if test="cust_industry!=null and !''.equals(cust_industry.trim())">
+                cust_industry=#{cust_industry},
+            </if>
+            <if test="cust_level!=null and !''.equals(cust_level.trim())">
+                cust_level=#{cust_level},
+            </if>
+            <if test="cust_linkman!=null and !''.equals(cust_linkman.trim())">
+                cust_linkman=#{cust_linkman},
+            </if>
+            <if test="cust_phone!=null and !''.equals(cust_phone.trim())">
+                cust_phone=#{cust_phone},
+            </if>
+            <if test="cust_mobile!=null and !''.equals(cust_mobile.trim())">
+                cust_mobile=#{cust_mobile},
+            </if>
+            <if test="cust_zipcode!=null and !''.equals(cust_zipcode.trim())">
+                cust_zipcode=#{cust_zipcode},
+            </if>
+            <if test="cust_address!=null and !''.equals(cust_address.trim())">
+                cust_address=#{cust_address},
+            </if>
+        </set>
+        <where>
+            cust_id=#{cust_id}
+        </where>
+
+    </update>
+
+    <sql id="whereQV">
+        <where>
+            <if test="cust_name!=null and !''.equals(cust_name.trim())">
+                and cust_name like "%"#{cust_name}"%"
+            </if>
+            <if test="cust_source!=null and !''.equals(cust_source.trim())">
+                and cust_source = #{cust_source}
+            </if>
+            <if test="cust_industry!=null and !''.equals(cust_industry.trim())">
+                and cust_industry = #{cust_industry}
+            </if>
+            <if test="cust_level!=null and !''.equals(cust_level.trim())">
+                and cust_level = #{cust_level}
+            </if>
+        </where>
+    </sql>
+</mapper>
