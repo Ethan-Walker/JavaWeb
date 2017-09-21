@@ -1,0 +1,11 @@
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:18:35:59 +0800] "GET / HTTP/1.1" 404 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:18:37:33 +0800] "GET / HTTP/1.1" 200 275 http-bio-8080-exec-1 1098
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:18:24 +0800] "GET /queryCustomer?id=1 HTTP/1.1" 404 977 http-bio-8080-exec-1 507
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:18:42 +0800] "GET / HTTP/1.1" 200 260 http-bio-8080-exec-2 955
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:19:12 +0800] "GET /queryCustomer?id=1 HTTP/1.1" 404 977 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:23:12 +0800] "GET /queryCustomer?id=1 HTTP/1.1" 404 977 http-bio-8080-exec-6 5
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:23:58 +0800] "GET /queryCustomer.action?id=1 HTTP/1.1" 200 8706 http-bio-8080-exec-8 690
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:25:46 +0800] "GET /queryCustomer.action?id=1 HTTP/1.1" 200 8706 http-bio-8080-exec-1 835
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:53:55 +0800] "GET /queryCustomer.action?id=1 HTTP/1.1" 200 8720 http-bio-8080-exec-1 763
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:58:30 +0800] "GET /queryCustomer.action?id=1 HTTP/1.1" 200 18624 http-bio-8080-exec-1 2779
+0:0:0:0:0:0:0:1 - - [21/Sep/2017:19:59:03 +0800] "GET /queryCustomer.action?id=1 HTTP/1.1" 200 301 http-bio-8080-exec-3 196
